@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "ytkaudio"
+description = "Basic Python3 Tk interface for downloading audio from YouTube"
+version = "0.0.1"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12.3"
+darkdetect = "^0.8.0"
+platformdirs = "^4.3.6"
+sv-ttk = "^2.6.0"
+yt-dlp = "^2024.8.6"
