@@ -1,6 +1,8 @@
 # ytkaudio
 basic python3 tk interface for downloading audio from YouTube, with a best attempt at being cross-platform.
 
+![image](https://github.com/user-attachments/assets/962dde28-6a40-4a3a-a548-dcaff6d886ae)
+
 ## requirements
 1. [ffmpeg](https://www.ffmpeg.org/download.html)<br>
 > windows users: download [this](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip), and shove it in a folder exposed to PATH. [(?)](https://stackoverflow.com/questions/9546324/adding-a-directory-to-the-path-environment-variable-in-windows)
