@@ -23,37 +23,26 @@ class Application:
         self.root.title(f"ytkaudio {VERSION}")
         logging.info(f"ytkaudio {VERSION}")
 
-        self.container = ttk.Frame(
-            padding="5px"
-        )
+        self.container = ttk.Frame(padding="5px")
         self.container.pack()
 
         self.convert_mp3 = tk.BooleanVar()
+        self.export_option = tk.StringVar()
 
         # folder browse button
         self.select_folder_button = ttk.Button(
-            self.container,
-            text="Select Output Folder",
-            command=self._get_folder
+            self.container, text="Select Output Folder", command=self._get_folder
         )
         logging.debug("built select_folder_button")
-        self.select_folder_button.grid(
-            row=0,
-            column=0
-        )
+        self.select_folder_button.grid(row=0, column=0)
         logging.debug("packed select_folder_button")
 
         # open folder
         self.open_folder_button = ttk.Button(
-            self.container,
-            text="Open",
-            command=self._open_folder
+            self.container, text="Open", command=self._open_folder
         )
         logging.debug("built open_folder_button")
-        self.open_folder_button.grid(
-            row=0,
-            column=1
-        )
+        self.open_folder_button.grid(row=0, column=1)
         logging.debug("packed open_folder_button")
 
         # second row: misc options
@@ -61,15 +50,10 @@ class Application:
             self.container,
             text="Convert to MP3 automatically?",
             variable=self.convert_mp3,
-            command=self._toggle_convert_mp3
+            command=self._toggle_convert_mp3,
         )
         logging.debug("built convert_mp3_toggle")
-        self.convert_mp3_toggle.grid(
-            row=1,
-            column=0,
-            sticky="w",
-            columnspan=2
-        )
+        self.convert_mp3_toggle.grid(row=1, column=0, sticky="w", columnspan=2)
         logging.debug("packed convert_mp3_toggle")
 
         # third row: yt-dlp
@@ -84,32 +68,18 @@ class Application:
 
         # download!
         self.go = ttk.Button(
-            self.container,
-            text="Go",
-            command=self._download_video,
-            state=tk.DISABLED
+            self.container, text="Go", command=self._download_video, state=tk.DISABLED
         )
         logging.debug("built go")
-        self.go.grid(
-            row=2,
-            column=1,
-            sticky="ne"
-        )
+        self.go.grid(row=2, column=1, sticky="ne")
         logging.debug("packed go")
 
         # fourth row: open logfile
         self.open_logfile_button = ttk.Button(
-            self.container,
-            text="Open log file",
-            command=self._open_logfile
+            self.container, text="Open log file", command=self._open_logfile
         )
         logging.debug("built open_logfile_button")
-        self.open_logfile_button.grid(
-            row=3,
-            column=0,
-            sticky="nw",
-            columnspan=2
-        )
+        self.open_logfile_button.grid(row=3, column=0, sticky="nw", columnspan=2)
         logging.debug("packed open_logfile_button")
 
         sv_ttk.set_theme(darkdetect.theme())
