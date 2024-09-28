@@ -1,9 +1,9 @@
 ### [download latest (.exe, comes with ffmpeg.exe)](https://github.com/jack-avery/ytkaudio/releases/latest/download/ytkaudio.zip)
 
 # ytkaudio
-basic python3 tk interface for downloading audio from YouTube, with a best attempt at being cross-platform.
+basic python3 tk interface for downloading media from YouTube, with a best attempt at being cross-platform.
 
-![image](https://github.com/user-attachments/assets/962dde28-6a40-4a3a-a548-dcaff6d886ae)
+![ytkaudio_Nd55gCFRt8](https://github.com/user-attachments/assets/3c6fa14e-c462-4a68-bee3-bf52bfe6e402)
 
 ## requirements
 **windows users: you can download a precompiled .exe file from the top of this readme**
