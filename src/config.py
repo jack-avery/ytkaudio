@@ -3,12 +3,7 @@ import logging
 import os
 from platformdirs import user_config_dir
 
-defaults = {
-    "ytkaudio": {
-        "outfolder": "",
-        "mp3ify": True,
-    }
-}
+defaults = {"ytkaudio": {"outfolder": ""}}
 
 
 def get_config_location() -> str:
@@ -27,7 +22,7 @@ def load() -> configparser.ConfigParser:
     logging.debug(f"loading config from {location}")
 
     config = configparser.ConfigParser()
-    config.read_dict(defaults) # load defaults first
+    config.read_dict(defaults)  # load defaults first
     config.read(location)
     return config
 

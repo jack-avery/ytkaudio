@@ -12,8 +12,9 @@ def setup() -> None:
         "%(asctime)s | %(module)s [%(levelname)s] %(message)s",
     )
     log_folder = user_log_dir("ytkaudio", "jack-avery", ensure_exists=True)
-    log_file = f"{log_folder}/" \
-        + f"{time.asctime().replace(':','-').replace(' ','_')}.log"
+    log_file = (
+        f"{log_folder}/" + f"{time.asctime().replace(':','-').replace(' ','_')}.log"
+    )
     file_handler = logging.FileHandler(log_file)
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(formatter)
