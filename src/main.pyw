@@ -15,7 +15,7 @@ from yt_dlp import YoutubeDL
 import config
 import logs
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 class Application:
@@ -140,10 +140,12 @@ class Application:
         if "youtu.be" not in url and "youtube.com" not in url:
             return
 
+        logging.info(f"Retrieving info for {url}...")
         with YoutubeDL() as ydl:
             meta = ydl.extract_info(url, download=False)
 
         self.title = f"[{meta['uploader']}] {meta['title']}"
+        logging.info(f"{self.title}")
 
         # There has to be a better way to do this... right???
         formats_with_duplicates = [
@@ -169,6 +171,7 @@ class Application:
         }
         self.formats["Audio Only"] = {"id": "bestaudio", "has_audio": True}
         self.formats["Audio Only (MP3)"] = {"id": "bestaudio", "has_audio": True}
+        logging.debug(self.formats)
 
         if isinstance(self.row3, ttk.Frame):
             self.row3.destroy()
@@ -203,6 +206,8 @@ class Application:
         return error_code
 
     def _download(self):
+        logging.info("Starting a job")
+
         selected_format = self.export_option.get()
         format = self.formats[selected_format]
 
@@ -223,6 +228,7 @@ class Application:
         if format != "bestaudio" and not format["has_audio"]:
             # also download audio and conjoin with ffmpeg
             # assuming at this point that the downloaded video is an .mp4
+            logging.info("Also downloading audio to join to video...")
             opts = {
                 "format": "bestaudio",
                 "outtmpl": base + f".{format['audio_ext']}",
@@ -232,12 +238,16 @@ class Application:
             video = ffmpeg.input(f"{base}.mp4")
             audio = ffmpeg.input(f"{base}.{format['audio_ext']}")
 
+            logging.debug("running ffmpeg concat")
             ffmpeg.concat(video, audio, v=1, a=1).output(
                 f"{base}-with_audio.mp4"
             ).overwrite_output().run()
 
+            logging.info("Cleaning up...")
             os.remove(f"{base}.{format['audio_ext']}")
             shutil.move(f"{base}-with_audio.mp4", f"{base}.mp4")
+
+        logging.info("Done current job")
 
 
 if __name__ == "__main__":
