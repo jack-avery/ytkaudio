@@ -14,11 +14,13 @@ basic python3 tk interface for downloading audio from YouTube, with a best attem
 ## usage
 1. select a folder for `ytkaudio` to dump audio files into.
 2. copy the YouTube URL into the text field.
-3. click `Go`.
+3. select your preferred output format.
+4. click `Go`.
 
 ## attributions
 * [darkdetect](https://github.com/albertosottile/darkdetect)
 * [ffmpeg](https://www.ffmpeg.org/)
+* [ffmpeg-python](https://github.com/kkroening/ffmpeg-python)
 * [platformdirs](https://github.com/tox-dev/platformdirs)
 * [sv-ttk](https://github.com/rdbende/Sun-Valley-ttk-theme)
 * [yt-dlp](https://github.com/yt-dlp/yt-dlp)

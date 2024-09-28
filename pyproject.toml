@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ytkaudio"
 description = "Basic Python3 Tk interface for downloading audio from YouTube"
-version = "0.0.1"
+version = "0.1.1"
 readme = "README.md"
 package-mode = false
 
