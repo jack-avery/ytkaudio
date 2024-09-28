@@ -23,5 +23,9 @@ basic python3 tk interface for downloading audio from YouTube, with a best attem
 * [sv-ttk](https://github.com/rdbende/Sun-Valley-ttk-theme)
 * [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
+# licensing
+the code specifically in this repository is licensed under WTFPL. basically, do whatever man, i won't stop you.<br>
+for the licenses of projects this little program relies on, please see "attributions".
+
 ## bug reports
 did something break? please [create an issue](https://github.com/jack-avery/ytkaudio/issues) so i can take a look.
